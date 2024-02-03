@@ -1,0 +1,24 @@
+/*global*/
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    
+}
+img{
+    max-width: 100%;
+}
+a{
+    text-decoration: :;
+}
+/*utilities*/
+.flex-container{
+    display: flex;
+}
+/*header*/
+.site-init{
+    background-color: purple;
+    height: 30rem;
+}
+

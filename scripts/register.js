@@ -5,22 +5,47 @@ let salon={
         street:"Bushnell Ave",
         number:"224",
         zip:"34546"
-    }
+    },
+    pets:[ //pets array
+        {
+            name:"Scooby",
+            age:3
+        },
+        {
+            name:"Scrappy",
+            age:1
+        },
+        {
+            name:"Tweety",
+            age:3
+        }
+    ]  //pets array
 }
+// salon.pets.push(pet1,pet2);
 
-let pet1={
-    name:"Scooby",
-    age:60
-}
-
-let pet2={
-    name:"Scrappy"
-    age:50
-}
+console.log(salon.pets[0].name);
+console.log(salon.pets[1].name);
+console.log(salon.pets[2].name);
+console.log(salon.pets.length);
 
 function displayFooterInfo(){
+    // console.log(salon.name);
+    // console.log(salon.phone);
+    // console.log(salon.address.street);
+    // document.write(`
+    // <p> Welcome to the ${salon.name} the address is ${salon.address.street} ${salon.address.number} ${salon.address.zip}</p>
+    // `)
     document.getElementById("info").innerHTML=`
-    <p> Welcome to the ${salon.name} the address is $(salon.address.street} ${salon.address.number} ${salon.address.zip}</p>
+    <p> Welcome to the ${salon.name} the address is ${salon.address.street} ${salon.address.number} ${salon.address.zip}</p>
     `;
 }
 displayFooterInfo();
+
+
+
+// function displayFooterInfo(){
+//     document.getElementById("info").innerHTML=`
+//     <p> Welcome to the ${salon.name} the address is $(salon.address.street} ${salon.address.number} ${salon.address.zip}</p>
+//     `;
+// }
+// displayFooterInfo();

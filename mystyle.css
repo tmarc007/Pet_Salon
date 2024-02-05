@@ -4,21 +4,48 @@
     padding: 0;
 }
 body{
-    
+    font-family: 'Press Start 2P', system-ui;
 }
 img{
     max-width: 100%;
 }
 a{
-    text-decoration: :;
+    text-decoration:none;
 }
 /*utilities*/
 .flex-container{
     display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 8rem;
+    font-size: .7rem;
 }
 /*header*/
 .site-init{
-    background-color: purple;
-    height: 30rem;
+    background-color: #d6fff6;
+    height: 15rem;
 }
+/*main*/
 
+/*welcome*/
+.welcome-section{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.welcome-img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #4DCCBD;
+    height: 20rem;
+}
+.welcome-img img{
+    display: block;
+    width: 14rem;
+    border-radius: 50%;
+}
+.site-footer{
+    background-color: black;
+    height: 10rem;
+    color: white;
+}

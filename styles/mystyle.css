@@ -1,0 +1,104 @@
+/*global*/
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: 'Press Start 2P', system-ui;
+
+}
+img{
+    max-width: 100%;
+}
+a{
+    text-decoration:none;
+}
+/*utilities*/
+.flex-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: .7rem;
+    height: 100%;
+}
+
+.container {
+    max-width: 1100px;
+    margin-inline: auto;
+    padding-inline: 15px;
+}
+
+/*header*/
+.site-init{
+    background-color: #60A561;
+    height: 5rem;
+
+}
+.header-welcome-font{
+    font-family: 'Honk', system-ui;
+    font-size: 4rem;
+    text-align: center;
+}
+.welcome-header{
+    width: 100%;
+}
+/*main*/
+.main-register-container{
+    /* background-color: #ffa400; */
+    background-color:  #b2abf2;
+}
+.main-register-container h2{
+    text-align: center;
+}
+.main-totalpets-total{
+    margin-top: 1rem;
+}
+.main-background{
+    background: linear-gradient(217deg, rgba(255,0,0,.8), rgba(255,0,0,0) 70.71%),
+    linear-gradient(127deg, rgba(0,255,0,.8), rgba(0,255,0,0) 70.71%),
+    linear-gradient(336deg, rgba(0,0,255,.8), rgba(0,0,255,0) 70.71%);
+}
+/*welcome*/
+.welcome-background {
+    /* background-color: #A115B7; */
+    /* background-image: url(./img/paws.jpg); */
+    /* background-size: 10%;
+    border: .2rem solid black; */
+    /* opacity: .7; */
+}
+.welcome-section{
+    display: flex;
+    justify-content: center;
+    padding: 2rem 0;
+    height: 30rem;
+    gap: 2rem;
+    font-family: fantasy;
+    font-size: 1.7rem;
+    font-style: italic;
+}
+.welcome-section img{
+    border-radius: 1rem;
+    height: 20rem;
+
+}
+.welcome-card{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 22rem;
+}
+.sub-header{
+    text-align: center;
+    margin-top: 2.5rem;
+}
+
+/*services*/
+
+/*footer*/
+.site-footer{
+    background-color: black;
+    height: 10rem;
+    color: white;
+}
+
+/*colors I like*/

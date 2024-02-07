@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="./mystyle.css">
+    <title>Pet Salon</title>
+</head>
+<body>
+    <header class="site-init">
+        <div class="flex-container container">
+            <h2>Virtual Pets</h2>
+
+            <nav>
+                <a href="index.html">Home</a>
+                <a href=""></a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-register-container">
+        <h2>Register your virtual pet</h2>
+
+        <form class="container">
+            <div class="mb-3">
+                <label class="form-label">Name:</label>
+                <input class="form-control form-control-sm" type="text" id="txtName">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Age:</label>
+                <input class="form-control form-control-sm" type="number" id="txtAge">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Gender:</label>
+                <input class="form-control form-control-sm" type="text" id="txtGender">
+            </div>
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+            <button class="btn btn-primary me-md-2" type="button" onclick="register();">Submit</button>
+            </div>
+        </form>
+            <div class="main-totalpets-total">
+            <h2>Number of registered pets: <span id="totalPets"></span></h2>   
+            </div>
+        
+        <div id="pets">
+
+        </div>
+        
+    </main>
+
+    <footer class="site-footer">
+        <p class="header-info" id="info">This is being replaced by a template literal.</p>
+    </footer>
+
+    <script src="./scripts/register.js" defer></script>
+</body>
+</html>

@@ -11,22 +11,29 @@ let salon={
     pets:[]
 }
 
-function Pet(n,a,g){  //constructor
+function Pet(n,a,g,b,s,t){  //constructor
     this.name=n;
     this.age=a;
     this.gender=g;
+    this.breed=b;
+    this.service=s;
+    this.type=t;
 }
 
+// Address Object Literal
 function displayFooterInfo(){
     document.getElementById("info").innerHTML=`
     <p> Welcome to the ${salon.name} our address is: ${salon.address.number} ${salon.address.street}  ${salon.address.city} ${salon.address.state} ${salon.address.zip}</p>
     `;
-
+    // This is not working on my Home Page
     document.getElementById("info2").innerHTML=`
     <p> Welcome to the ${salon.name} our address is: ${salon.address.number} ${salon.address.street}  ${salon.address.city} ${salon.address.state} ${salon.address.zip}</p>
     `;
-
 }
+
+
+
+
 
 // function displayFooterInfo(){
 //     let footerInfo = document.getElementsByClassName("footer-info");
@@ -50,11 +57,14 @@ function displayPetNames(){
 let inputName= document.getElementById("txtName");
 let inputAge= document.getElementById("txtAge");
 let inputGender= document.getElementById("txtGender");
+let inputBreed= document.getElementById("txtBreed");
+let inputService= document.getElementById("txtService");
+let inputType= document.getElementById("txtType");
 
 function register(){
     //1. get values
     //2. 
-    let newPet= new Pet(inputName.value,inputAge.value,inputGender.value);
+    let newPet= new Pet(inputName.value,inputAge.value,inputGender.value,inputBreed,inputService,inputType);
     console.log(newPet);
     //3. push the newPet to the array
     salon.pets.push(newPet);
@@ -64,6 +74,9 @@ function register(){
     inputName.value="";
     inputAge.value="";
     inputGender.value="";
+    inputBreed.value="";
+    inputService.value="";
+    inputType.value="";
 }
 
 function init(){

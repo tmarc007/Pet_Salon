@@ -58,6 +58,11 @@ a{
     linear-gradient(127deg, rgba(0,255,0,.8), rgba(0,255,0,0) 70.71%),
     linear-gradient(336deg, rgba(0,0,255,.8), rgba(0,0,255,0) 70.71%);
 }
+div.radio{
+    display: flex;
+    justify-content: space-evenly;
+    background-color: white;
+}
 /*welcome*/
 .welcome-background {
     /* background-color: #A115B7; */

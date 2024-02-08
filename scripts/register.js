@@ -93,10 +93,6 @@ function init(){
 window.onload=init; //wait to render the HTML
 
 
-
-
-
-
     // pets:[ //pets array
     //     {
     //         name:"Jindo",

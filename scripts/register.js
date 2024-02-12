@@ -1,35 +1,106 @@
-let salon={
-    name:"Virtual Pets",
-    phone:"555-555-5555",
-    address:{
-        number:"224",
-        street:"Bushnell Ave.,",
-        state: "CA",
-        city: "Rancho Cuchmonga",
-        zip:"94546"
-    },
-    pets:[]
-}
-
-function Pet(n,a,g,b,s,t){  //constructor
+//constructor
+function Pet(n,a,g,b,s,p,t){  
     this.name=n;
     this.age=a;
     this.gender=g;
     this.breed=b;
     this.service=s;
+    this.payment=p;
     this.type=t;
 }
 
-// Address Object Literal
-function displayFooterInfo(){
-    document.getElementById("info").innerHTML=`
-    <p> Welcome to the ${salon.name} our address is: ${salon.address.number} ${salon.address.street}  ${salon.address.city} ${salon.address.state} ${salon.address.zip}</p>
-    `;
-    // This is not working on my Home Page
-    document.getElementById("info2").innerHTML=`
-    <p> Welcome to the ${salon.name} our address is: ${salon.address.number} ${salon.address.street}  ${salon.address.city} ${salon.address.state} ${salon.address.zip}</p>
-    `;
+function getE(id){
+    return document.getElementById(id);
 }
+//get element from Html
+let inputName= getE("txtName");
+let inputAge= getE("txtAge");
+let inputGender= getE("txtGender");
+let inputBreed= getE("txtBreed");
+let inputService= getE("txtService");
+let inputPayment= getE("txtPayment");
+let inputType= getE("txtType");
+
+function isValid(aPet){
+    let validation=true;
+    //Clear the style
+    //Document.querySelectorAll("inputs");
+    getE("txtName").classList.remove("alert-error");
+    getE("txtAge").classList.remove("alert-error");
+    getE("txtBreed").classList.remove("alert-error");
+    if(aPet.name==""){
+        //the pet is not valid
+        validation=false;
+        getE("txtName").classList.add("alert-error");
+        getE("txtAge").classList.add("alert-error");
+        getE("txtBreed").classList.add("alert-error");
+    }
+    if(aPet.age==""){
+        validation=false;
+        getE("txtName").classList.add("alert-error");
+        getE("txtAge").classList.add("alert-error");
+        getE("txtBreed").classList.add("alert-error");
+    }
+    return validation;
+}
+
+function showNotifications(msg,type){
+    getE("notifications").classList.remove("hidden");
+    getE("notifications").innerHTML=`<p class="${type}">${msg} </p>`;
+
+    setTimeout(function(){
+        getE("notifications").classList.add("hidden");
+    },3000);
+}
+function register(){
+    //1. get values
+    //2. create the newPet using the constructor
+    let newPet= new Pet(inputName.value,inputAge.value,inputGender.value,inputBreed.value,inputService.value,inputPayment.value,inputType.value);
+    console.log(newPet);
+
+    if(isValid(newPet)==true){
+        //3. push the newPet to the array
+        salon.pets.push(newPet);
+        //4. call display function
+        displayPetCards();
+        //5. clear the input
+        inputName.value="";
+        inputAge.value="";
+        inputGender.value="";
+        inputBreed.value="";
+        inputService.value="";
+        inputPayment.value="";
+        inputType.value="";
+    }else{
+        showNotifications("INPUT ERROR!!! ---> Please fill out all the reqired fields","alert-error");
+}
+}
+
+function init(){
+    //create predifined obj
+
+    let pet3=new Pet("Speedy",2,"Male","Chihuahua","Nails","Debit","Dog");
+    let pet4=new Pet("Scooby2",1,"Male","Pitbull","Vaccine","Debit","Dog");
+    let pet5=new Pet("Scrappy2",1,"Male","Doberman","Grooming","Visa","Dog");
+    let pet6=new Pet("Speedy2",1,"Male","Golden Retreiver","Grooming","Visa","Dog");
+    salon.pets.push(pet3,pet4,pet5,pet6);
+    //executing fn
+    displayPetCards();
+}
+window.onload=init;//wait to render the HTML
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -44,55 +115,20 @@ function displayFooterInfo(){
 //     }
 // }
 
-function displayPetNames(){
-    document.getElementById('pets').innerHTML="";
-    for(let i=0; i<salon.pets.length; i++){
-        document.getElementById('pets').innerHTML+=`<p>${salon.pets[i].name}</p>`;
-    }
-    document.getElementById('totalPets').innerHTML=`Total=${salon.pets.length}`;
 
-}
 
-//get element from Html
-let inputName= document.getElementById("txtName");
-let inputAge= document.getElementById("txtAge");
-let inputGender= document.getElementById("txtGender");
-let inputBreed= document.getElementById("txtBreed");
-let inputService= document.getElementById("txtService");
-let inputType= document.getElementById("txtType");
 
-function register(){
-    //1. get values
-    //2. 
-    let newPet= new Pet(inputName.value,inputAge.value,inputGender.value,inputBreed,inputService,inputType);
-    console.log(newPet);
-    //3. push the newPet to the array
-    salon.pets.push(newPet);
-    //4. call display function
-    displayPetNames();
-    //5. clear the input
-    inputName.value="";
-    inputAge.value="";
-    inputGender.value="";
-    inputBreed.value="";
-    inputService.value="";
-    inputType.value="";
-}
 
-function init(){
-    //create predifined obj
-    let pet1=new Pet("Jindo",2,"Male");
-    let pet2=new Pet("Lolipop",1,"Male");
-    let pet3=new Pet("Sparky",1,"Male");
-    salon.pets.push(pet1,pet2,pet3);
-    //executing fn
-    displayPetNames();
-    displayFooterInfo();
-}
+
+
 
 window.onload=init; //wait to render the HTML
 
 
+//* for assignment 3
+function displayPetTable(){
+
+}
     // pets:[ //pets array
     //     {
     //         name:"Jindo",

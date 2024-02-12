@@ -19,22 +19,22 @@ function myFunction2() {
     }
 }
 
+
 myFunction2();
-//-------------
 
 function planeTicket(destination,price){
     console.log("Traveling to... " + destination);
     return price*1.11;
 }
 
+function calculateProfits(){
 var price1=planeTicket("Mexico",100);
 var price2=planeTicket("Italy",200);
 var price3=planeTicket("China",150);
 
-
-function calculateProfits(){
     console.log(price1+price2+price3);
 }
+
 calculateProfits();
 
 

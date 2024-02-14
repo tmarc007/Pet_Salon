@@ -1,18 +1,16 @@
-let salon={
-    name:"Virtual Pets",
-    phone:"555-555-5555",
+let salon={//object
+    name:"The fashion pet",
+    phone:"999-999-9999",
     address:{
-        number:"224",
-        street:"Bushnell Ave.,",
-        state: "CA",
-        city: "Rancho Cuchmonga",
-        zip:"94546"
+        street:"Palm",
+        number:"262-K",
+        zip:"22333"
     },
-    pets:[]
+    pets:[] //array
 }
 function displayFooterInfo(){
     document.getElementById("info").innerHTML=`
-    <p> Welcome to the ${salon.name} our address is: ${salon.address.number} ${salon.address.street}  ${salon.address.city} ${salon.address.state} ${salon.address.zip}</p>
+    <p> Welcome to the ${salon.name} is located in ${salon.address.street} ${salon.address.number} ${salon.address.zip}</p>
     `;
 }
 

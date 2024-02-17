@@ -1,12 +1,37 @@
-//JS vs jquery
+var services=[];
+//similar to window.onload
+$(document).ready(function(){
+    console.log("Services page");
 
-document.getElementById("service");  //this is JS
-$("#service");  //jquery
+    //add the hook events
+    $("#btnService").click(addService);
 
-document.getElementsByClassName("form-control");
-$(".form-control");
+    //loading data
+    displayItems(services);
+});
 
-document.getElementsByTagName("h2");
-$("h2");
-//get the value
-let inputService=$("#txtService").val();
+function Service(description,price){
+    this.description=description;
+    this.price=price;
+}
+
+
+function addService(){
+    let inputService = $("#txtService").val(); //similar to value
+    let inputPrice = $("#txtPrice").val();
+    let newService = new Service(inputService,inputPrice);
+    services.push(newService);
+    saveItem(newService); //from the LS
+    displayItems(services);
+}
+
+function displayItems(items){
+    let htmlList=$("#services");
+    htmlList.html("");
+    let li;
+    for(let i=0; i<items.length; i++){
+        let item=items [i];
+        li=`<li>${item.description} - ${item.price}</li>`;
+        htmlList.append(li);
+    }
+}

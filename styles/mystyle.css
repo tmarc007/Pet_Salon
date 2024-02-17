@@ -79,3 +79,7 @@ a{
 .hidden{
     display: none;
 }
+/* Register Page */
+.services-container{
+    height: 5vh;
+}

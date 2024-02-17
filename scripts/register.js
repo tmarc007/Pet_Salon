@@ -1,10 +1,13 @@
 let petID=0
 //constructor
-function Pet(n,a,g,s){
+function Pet(n,a,g,b,s,p,t){
     this.name=n;
     this.age=a;
     this.gender=g;
+    this.breed=b;
     this.service=s;
+    this.payment=p;
+    this.type=t;
     this.id=petID++;
 }
 
@@ -15,7 +18,11 @@ function getE(id){
 let inputName= getE("txtName");
 let inputAge= getE("txtAge");
 let inputGender= getE("txtGender");
+let inputBreed= getE("txtBreed");
 let inputService=getE("txtService");
+let inputPayment= getE("txtPayment");
+let inputType= getE("txtType");
+
 
 function isValid(aPet){
     let validation=true;
@@ -23,14 +30,19 @@ function isValid(aPet){
     //document.querySelectorAll("inputs");
     getE("txtName").classList.remove("alert-error");
     getE("txtAge").classList.remove("alert-error");
+    getE("txtBreed").classList.remove("alert-error");
     if(aPet.name==""){
         //the pet is not valid
         validation=false;
         getE("txtName").classList.add("alert-error");
+        getE("txtAge").classList.add("alert-error");
+        getE("txtBreed").classList.add("alert-error");
     }
     if(aPet.age==""){
         validation=false;
         getE("txtAge").classList.add("alert-error");
+        getE("txtAge").classList.add("alert-error");
+        getE("txtBreed").classList.add("alert-error");
     }
     return validation;
 }
@@ -46,7 +58,7 @@ function showNotifications(msg,type){
 function register(){
     //1)getting value
     //2) create the newPet using the constructor
-    let newPet = new Pet(inputName.value,inputAge.value,inputGender.value,inputService.value);
+    let newPet = new Pet(inputName.value,inputAge.value,inputGender.value,inputBreed.value,inputService.value,inputPayment.value,inputType.value);
     console.log(newPet);
 
     if(isValid(newPet)==true){
@@ -58,7 +70,10 @@ function register(){
         inputName.value="";
         inputAge.value="";
         inputGender.value="";
+        inputBreed.value="";
         inputService.value="";
+        inputPayment.value="";
+        inputType.value="";
 
         showNotifications("Successful registration","alert-success");
     }else{
@@ -80,10 +95,10 @@ function deletePet(petID){
 function init(){
     //creating predefined obj
     
-    let pet3=new Pet("Speedy",70,"Male","Grooming");
-    let pet4=new Pet("Scooby2",60,"Male","Vaccine");
-    let pet5=new Pet("Scrappy2",50,"Male","Nails");
-    let pet6=new Pet("Speedy2",70,"Male","Grooming");
+    let pet3=new Pet("Speedy",2,"Male","Chihuahua","Nails","Debit","Dog");
+    let pet4=new Pet("Scooby2",1,"Male","Pitbull","Vaccine","Debit","Dog");
+    let pet5=new Pet("Scrappy2",1,"Male","Doberman","Grooming","Visa","Dog");
+    let pet6=new Pet("Speedy2",1,"Male","Golden Retreiver","Grooming","Visa","Dog");
     salon.pets.push(pet3,pet4,pet5,pet6);
     //exacuting fn
     displayPetCards();

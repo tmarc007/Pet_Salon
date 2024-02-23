@@ -48,12 +48,14 @@ function isValid(aPet){
 }
 
 function showNotifications(msg,type){
-    getE("notifications").classList.remove("hidden");
+    // getE("notifications").classList.remove("hidden");
+    $("#notifications").slideDown(1000);
     getE("notifications").innerHTML=`<p class="${type}">${msg} </p>`;
-    
-    setTimeout(function(){
-        getE("notifications").classList.add("hidden");
-    },3000);
+    getE("notifications").innerHTML=`<p class="${type}">${msg} </p>`;
+    $("#notifications").slideUp(2000);
+    // setTimeout(function(){
+    //     getE("notifications").classList.add("hidden");
+    // },3000);
 }
 function register(){
     //1)getting value
@@ -65,6 +67,7 @@ function register(){
         //3) push the newPet to the array
         salon.pets.push(newPet);
         //4) call display function
+        saveItem(newPet,"petsDB");
         displayPetCards();
         //5) clear the input
         inputName.value="";
@@ -92,6 +95,16 @@ function deletePet(petID){
     getE(petID).remove();//remove from the HTML
     salon.pets.splice(deleteIndex,1);//remove the pet from the array
 }
+
+function getServices(){
+    let servicesList = readItems("services");
+    for(let i=0; i<servicesList.length; i++){
+        let service = servicesList[i];
+        $("#txtService").append(
+            `<option value="${service.description}">${service.description}</option>`
+        );
+    }
+}
 function init(){
     //creating predefined obj
     
@@ -102,6 +115,7 @@ function init(){
     salon.pets.push(pet3,pet4,pet5,pet6);
     //exacuting fn
     displayPetCards();
+    getServices();
 }
 window.onload=init;// wait to render the HTML
 

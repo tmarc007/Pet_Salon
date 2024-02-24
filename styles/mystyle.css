@@ -12,6 +12,9 @@ img{
 a{
     text-decoration: none;
 }
+ul{
+    margin-left: 15px;
+}
 /*utilities*/
 .flex-container{
     display: flex;
@@ -19,11 +22,90 @@ a{
     align-items: center;
     height: 8rem;
 }
+.tooltip {
+    position: relative;
+    display: inline-block;
+    border: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: red;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    top: -5px;
+    left: 110%;
+}
+
+.tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 100%;
+    margin-top: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent black transparent transparent;
+}
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+
 /*header*/
 .site-init{
-    background-color: #D6FFF6;
+    background-color: #d8d4f2;
     height: 15rem;
 }
+
+@keyframes example {
+    0% {
+        background: rgb(231, 26, 7);
+    }
+    10% {
+        background: rgb(235, 135, 5);
+    }
+    20% {
+        background: rgb(231, 235, 5);
+    }
+    30% {
+        background: rgb(138, 233, 6);
+    }
+    40% {
+        background: rgb(36, 227, 7);
+    }
+    50% {
+        background: rgb(7, 218, 119);
+    }
+    60% {
+        background: rgb(4, 185, 231);
+    }
+    70% {
+        background: rgb(0, 64, 255);
+    }
+    80% {
+        background: rgb(89, 6, 233);
+    }
+    90% {
+        background: rgb(161, 7, 227);
+    }
+    100% {
+        background: rgb(227, 6, 153);
+    }
+}
+
+  /* The element to apply the animation to */
+.rainbow {
+    background-color: red;
+    animation-name: example;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+}
+
 /*main*/
 
 /*welcome*/
@@ -35,7 +117,7 @@ a{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #4DCCBD;
+    background-color: #c5e8a6;
     height: 30rem;
 }
 .welcome-img img{
@@ -44,10 +126,13 @@ a{
     border-radius: 20px;
 }
 /*services*/
+.service-main-background{
+    height: 30rem;
+}
 
 /*footer*/
 .site-footer{
-    background-color: #231651;
+    background-color: black;
     height: 10rem;
     color:white;
 }
@@ -65,7 +150,7 @@ a{
     row-gap: 1rem;
 }
 .petCard{
-    background-color: #dedede;
+    background-color: #f3ae90;
     border-radius: 5px;
     padding: 1rem;
 }
@@ -82,4 +167,19 @@ a{
 /* Register Page */
 .services-container{
     height: 5vh;
+}
+.register-background-main {
+    position: relative;
+}
+
+.register-background-main::before {
+    content: "";
+    background-image: url(/img/paws.jpg);
+    opacity: 0.2;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Ensure it's behind other content */
 }
